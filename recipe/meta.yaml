@@ -12,31 +12,31 @@ source:
 
 build:
   number: 0
-  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
 requirements:
   host:
-    - python
-    - setuptools
+    - python >=3.7
+    - hatchling >=1.11.1
+    - hatch-vcs >=0.2
   run:
-    - python
-    - setuptools
-    - pytest >=2.6.0
+    - python >=3.7
+    - pytest >=7.2
 
 test:
   imports:
-    - pytest_env
+    - pytest_env.plugin
   commands:
     - pytest --help
 
 about:
-  home: https://github.com/MobileDynasty/pytest-env
+  home: https://github.com/pytest-dev/pytest-env
+  dev_url: https://github.com/pytest-dev/pytest-env
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  # license file is missing from sdist: https://github.com/MobileDynasty/pytest-env/issues/6
-  summary: py.test plugin that allows you to add environment variables.
+  summary: This is a pytest plugin that enables you to set environment variables in a pytest.ini or pyproject.toml file.
 
 extra:
   recipe-maintainers:
