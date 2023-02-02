@@ -1,43 +1,43 @@
 {% set name = "pytest-env" %}
-{% set version = "0.6.2" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "7e94956aef7f2764f3c147d216ce066bf6c42948bb9e293169b1b1c880a580c2" %}
+{% set version = "0.8.1" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: d7b2f5273ec6d1e221757998bc2f50d2474ed7d0b9331b92556011fadc4e9abf
 
 build:
   number: 0
-  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . -vv"
   noarch: python
 
 requirements:
-  build:
-    - python
-    - setuptools
+  host:
+    - pip
+    - python >=3.7
+    - hatchling >=1.11.1
+    - hatch-vcs >=0.2
   run:
-    - python
-    - setuptools
-    - pytest >=2.6.0
+    - python >=3.7
+    - pytest >=7.2
 
 test:
   imports:
-    - pytest_env
+    - pytest_env.plugin
   commands:
     - pytest --help
 
 about:
-  home: https://github.com/MobileDynasty/pytest-env
+  home: https://github.com/pytest-dev/pytest-env
+  dev_url: https://github.com/pytest-dev/pytest-env
   license: MIT
+  license_file: LICENSE
   license_family: MIT
-  # license file is missing from sdist: https://github.com/MobileDynasty/pytest-env/issues/6
-  summary: py.test plugin that allows you to add environment variables.
+  summary: This is a pytest plugin that enables you to set environment variables in a pytest.ini or pyproject.toml file.
 
 extra:
   recipe-maintainers:
