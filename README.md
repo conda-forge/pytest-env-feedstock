@@ -1,13 +1,15 @@
-About pytest-env
-================
-
-Home: https://github.com/MobileDynasty/pytest-env
-
-Package license: MIT
+About pytest-env-feedstock
+==========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-env-feedstock/blob/main/LICENSE.txt)
 
-Summary: py.test plugin that allows you to add environment variables.
+Home: https://github.com/pytest-dev/pytest-env
+
+Package license: MIT
+
+Summary: This is a pytest plugin that enables you to set environment variables in a pytest.ini or pyproject.toml file.
+
+Development: https://github.com/pytest-dev/pytest-env
 
 Current build status
 ====================
