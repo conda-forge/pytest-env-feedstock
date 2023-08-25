@@ -1,5 +1,5 @@
 {% set name = "pytest-env" %}
-{% set version = "0.8.2" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: baed9b3b6bae77bd75b9238e0ed1ee6903a42806ae9d6aeffb8754cd5584d4ff
+  sha256: 603fe216e8e03a5d134989cb41317c59aabef013d2250c71b864ab0798fbe6f6
 
 build:
   number: 0
