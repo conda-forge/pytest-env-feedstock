@@ -19,11 +19,11 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - hatchling >=1.8
-    - hatch-vcs >=0.3
+    - hatchling >=1.25
+    - hatch-vcs >=0.4
   run:
     - python >=3.8
-    - pytest >=7.4.2
+    - pytest >=8.3.3
     - tomli >=2.0.1
 
 test:
