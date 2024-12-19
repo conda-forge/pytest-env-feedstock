@@ -7,26 +7,28 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 91209840aa0e43385073ac464a554ad2947cc2fd663a9debf88d03b01e0cc1cf
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=1.25
     - hatch-vcs >=0.4
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pytest >=8.3.3
     - tomli >=2.0.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pytest_env.plugin
   commands:
