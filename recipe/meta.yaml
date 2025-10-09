@@ -23,8 +23,8 @@ requirements:
     - hatch-vcs >=0.4
   run:
     - python >={{ python_min }}
-    - pytest >=8.3.3
-    - tomli >=2.0.1
+    - pytest >=8.4.2
+    - tomli >=2.2.1
 
 test:
   requires:
