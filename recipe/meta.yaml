@@ -19,8 +19,8 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - hatchling >=1.25
-    - hatch-vcs >=0.4
+    - hatchling >=1.27
+    - hatch-vcs >=0.5
   run:
     - python >={{ python_min }}
     - pytest >=8.4.2
