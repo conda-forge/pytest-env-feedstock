@@ -1,6 +1,6 @@
 {% set name = "pytest-env" %}
 {% set version = "1.8.0" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -20,13 +20,12 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - hatchling >=1.28
+    - hatchling >=1.32.4
     - hatch-vcs >=0.5
   run:
     - python >={{ python_min }}
-    - pytest >=9.0.2
-    - python-dotenv >=1.2.2
-    - tomli >=2.4
+    - pytest >=9.1.1
+    - python-dotenv >=1.2.4
 
 test:
   requires:
