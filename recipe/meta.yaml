@@ -19,9 +19,11 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - python-sbom >=0.1.2
     - hatch-fancy-pypi-readme >=25.1
     - hatch-vcs >=0.5
     - hatchling >=1.32.4
+    
   run:
     - python >={{ python_min }}
     - pytest >=9.1.1
