@@ -1,5 +1,5 @@
 {% set name = "pytest-env" %}
-{% set version = "1.8.6" %}
+{% set version = "1.8.7" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2bfa4c2f911b6e8239291dd4652a4547dbf6a44050942e12eea300204b168162
+  sha256: 917e169e829e328aca7cbe0426801672f1243a7b03bbbccd687490d2a3c6725e
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
     - hatch-fancy-pypi-readme >=25.1
     - hatch-vcs >=0.5
     - hatchling >=1.32.4
-    
+
   run:
     - python >={{ python_min }}
     - pytest >=9.1.1
